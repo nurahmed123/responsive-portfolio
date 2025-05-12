@@ -1,4 +1,3 @@
-/*--------------- Navigation Menu ----------------- */
 (() => {
     const hamburgerBtn = document.querySelector(".hamburger-btn"),
         navMenu = document.querySelector(".nav-menu"),
@@ -24,7 +23,7 @@
         }, 300);
     };
 
-    /* Event Listeners */
+   
     hamburgerBtn.addEventListener("click", showNavMenu);
     closeNavBtn.addEventListener("click", hideNavMenu);
 
@@ -33,13 +32,13 @@
             event.preventDefault();
             const hash = event.target.hash;
 
-            // Handle section switching
+        
             document.querySelector(".section.active").classList.add("hide");
             document.querySelector(".section.active").classList.remove("active");
             document.querySelector(hash).classList.add("active");
             document.querySelector(hash).classList.remove("hide");
 
-            // Update active navigation link
+           
             const activeNavItem = navMenu.querySelector(".active");
             activeNavItem.classList.add("outer-shadow", "hover-in-shadow");
             activeNavItem.classList.remove("active", "inner-shadow");
@@ -64,7 +63,7 @@
     });
 })();
 
-/*--------------- About Section Tabs ----------------- */
+
 (() => {
     const aboutSection = document.querySelector(".about-section"),
         tabsContainer = document.querySelector(".about-tabs");
@@ -84,7 +83,7 @@
     });
 })();
 
-/*--------------- Portfolio Filter and Popup ----------------- */
+
 (() => {
     const filterContainer = document.querySelector(".portfolio-filter"),
         portfolioItemsContainer = document.querySelector(".portfolio-items"),
@@ -149,7 +148,7 @@
         }
     };
 
-    /* Event Listeners */
+
     filterContainer.addEventListener("click", (event) => {
         if (event.target.classList.contains("filter-item") && !event.target.classList.contains("active")) {
             filterContainer.querySelector(".active").classList.remove("outer-shadow", "active");
@@ -204,12 +203,12 @@
     projectDetailsBtn.addEventListener("click", togglePopupDetails);
 })();
 
-/*--------------- Utility Functions ----------------- */
+
 function toggleBodyScrolling() {
     document.body.classList.toggle("stop-scrolling");
 }
 
-/*--------------- Page Preloader ----------------- */
+
 window.addEventListener("load", () => {
     document.querySelector(".preloader").classList.add("fade-out");
     setTimeout(() => {
